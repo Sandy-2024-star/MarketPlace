@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Auth / session data
+fixtures/.auth.json
+fixtures/storageState.json
+**/storageState.json
+**/.shopify-session.json
+**/auth-state.json
+
+# Test artifacts
+playwright-report/
+playwright-report-e2e/
+test-results/
+/test-results/
+
+# Databases
+*.db
+*.db-shm
+*.db-wal
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+
+# IDE / tool config (local only)
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
