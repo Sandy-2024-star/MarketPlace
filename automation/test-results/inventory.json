@@ -1,0 +1,197 @@
+{
+  "capturedAt": "2026-03-16T11:27:26.780Z",
+  "cards": [
+    {
+      "title": "Adobe Commerce to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "Amazon Seller Central to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "BigCommerce to Shopify",
+      "type": "API"
+    },
+    {
+      "title": "Cin7 Omni to Cin7 Core",
+      "type": "API"
+    },
+    {
+      "title": "Clover to Lightspeed Retail (X-Series)",
+      "type": "API"
+    },
+    {
+      "title": "Clover to Shopify",
+      "type": "API"
+    },
+    {
+      "title": "Etsy to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "FreshBooks to QuickBooks Online",
+      "type": "File Based"
+    },
+    {
+      "title": "GreenLine POS to Lightspeed Retail (X-Series)",
+      "type": "File Based"
+    },
+    {
+      "title": "HubSpot Contacts Migration",
+      "type": "API"
+    },
+    {
+      "title": "HubSpot to Salesforce",
+      "type": "API"
+    },
+    {
+      "title": "HubSpot to Salesforce",
+      "type": "API"
+    },
+    {
+      "title": "Lightspeed R-Series to QuickBooks Online Integration",
+      "type": "API"
+    },
+    {
+      "title": "Lightspeed Retail (R-Series) to Clover",
+      "type": "API"
+    },
+    {
+      "title": "Lightspeed Retail (R-Series) to Lightspeed Retail (X-Series)",
+      "type": "API"
+    },
+    {
+      "title": "Lightspeed Retail (R-Series) to Shopify",
+      "type": "API"
+    },
+    {
+      "title": "Lightspeed Retail (X-Series) to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "Lightspeed Retail (X-Series) to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "Microsoft Dynamics 365 to Salesforce",
+      "type": "API"
+    },
+    {
+      "title": "PrestaShop to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "QuickBooks Desktop to Xero",
+      "type": "File Based"
+    },
+    {
+      "title": "QuickBooks Online to Xero",
+      "type": "API"
+    },
+    {
+      "title": "QuickBooks POS to Lightspeed Retail (X-Series)",
+      "type": "File Based"
+    },
+    {
+      "title": "RainPOS to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "Revel to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "Sage Cloud to QuickBooks Online",
+      "type": "File Based"
+    },
+    {
+      "title": "Salesforce to HubSpot",
+      "type": "API"
+    },
+    {
+      "title": "ShopKeep to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "Shopify to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "Shopify to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "Shopify to Clover (v2)",
+      "type": "File Based"
+    },
+    {
+      "title": "Shopify to Lightspeed Retail (X-Series)",
+      "type": "File Based"
+    },
+    {
+      "title": "Square To Quickbooks integration",
+      "type": "API"
+    },
+    {
+      "title": "Square to Clover",
+      "type": "API"
+    },
+    {
+      "title": "Square to Lightspeed Retail (X-Series)",
+      "type": "API"
+    },
+    {
+      "title": "Square to Shopify",
+      "type": "API"
+    },
+    {
+      "title": "Stripe to Chargebee",
+      "type": "API"
+    },
+    {
+      "title": "Toast to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "TouchBistro to Clover",
+      "type": "File Based"
+    },
+    {
+      "title": "Vend to Clover",
+      "type": "API"
+    },
+    {
+      "title": "Wix eCommerce to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "WooCommerce to Shopify",
+      "type": "File Based"
+    },
+    {
+      "title": "Xero to QuickBooks Online",
+      "type": "API"
+    },
+    {
+      "title": "Xero to QuickBooks Online (Deprecated)",
+      "type": "API"
+    },
+    {
+      "title": "Zoho Books to QuickBooks Online",
+      "type": "File Based"
+    },
+    {
+      "title": "Zoho CRM to HubSpot",
+      "type": "File Based"
+    },
+    {
+      "title": "Zoho CRM to Salesforce",
+      "type": "API"
+    },
+    {
+      "title": "Zoho CRM to Salesforce (File Import)",
+      "type": "File Based"
+    }
+  ]
+}

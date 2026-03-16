@@ -1,0 +1,11 @@
+Customer ID,First Name,Last Name,Email,Accepts Email Marketing,Default Address Company,Default Address Address1,Default Address Address2,Default Address City,Default Address Province Code,Default Address Country Code,Default Address Zip,Default Address Phone,Phone,Accepts SMS Marketing,Total Spent,Total Orders,Note,Tax Exempt,Tags
+8205201277111,Ajay,Peter,ajay.peter@gmail.com.com,no,AJ Pvt Ltd,Keshav Nagar Mundhwa,Near Clue,Pune,MH,IN,411036,+919090129012,+919090909090,no,248031.28,2,Customer 01,no,Customer 01 - 05
+8205203079351,Vijay,Dube,vijay.dube@gmail.com,no,VJ Pvt Ltd,MIDC Chinchwad,Near sai park,Pimpri-Chinchwad,MH,IN,411019,+919190912909,+919090909012,no,135373.64,1,Customer 02,no,Customer 01 - 05
+8205204390071,Daud,Shaikh,daud.shaikh@gmail.com,no,Daud Pvt Ltd,Kharadi,Near Reliance,Pune,MH,IN,411014,+919090909011,+918989898981,no,36578.82,1,Customer 03,no,Customer 01 - 05
+8205205242039,Chirag,Pathak,chirag.pathak@gmail.com,no,Chirag Pvt Ltd,Hadapsar Railway Station Jadhav Nagar Mundhwa,Near Marosa mandir,Pune,MH,IN,411036,,+918921898912,no,61003.64,1,Customer 04,no,Customer 01 - 05
+8205206945975,Rajesh,Yede,rajesh.yede@gmail.com,no,Yede Pvt Ltd,Chinchwad Gaon Chinchwad,Near temple,Pimpri-Chinchwad,MH,IN,411033,,+918322322329,no,39020.91,1,Customer 05,no,Customer 01 - 05
+8205208125623,Rohan,Chauhan,rohan.chauhan@gmail.com,no,rohan Pvt Ltd,Hinjawadi,,Pune,MH,IN,,,+918212121098,no,1416.00,1,Customer 06,no,Customer 06 - 10
+8205209305271,Akash,pawar,akash.pawar@testing.com,yes,Ak pvt ltd,"Bund Garden, Pune Bund Garden Sangamvadi",6th Floor,Pune,MH,IN,411001,,+919812121211,yes,32700.00,1,Customer 07,no,Customer 06 - 10
+8205213040823,Jay,Kale,jay.kale@gmail.com,yes,jay & sons Pvt Ltd,Selaiyur,,Chennai,TN,IN,600073,,+919876898121,yes,62183.64,1,Customer 08,no,Customer 06 - 10
+8205214482615,Radha,Rasal,radha.rasal@testing.com,no,RR Pvt Ltd,Z Corner Pan Shop Keshav Nagar Mundhwa,SHOP NO 1,Pune,MH,IN,412307,,+919012901291,no,84014.82,1,Customer 09,no,Customer 06 - 10
+8205217530039,Prachi,Suryawanshi,prachi.pro@testing.com,yes,PAR Pvt Ltd,Manjari Budruk,,Pune,MH,IN,,,+918796838393,yes,59074.73,1,Customer 10,no,Customer 06 - 10

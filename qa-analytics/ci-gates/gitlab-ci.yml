@@ -1,0 +1,54 @@
+# QA Analytics — GitLab CI Integration
+
+stages:
+  - test
+  - analytics
+  - gate
+
+variables:
+  QA_SUITE:   "migration-ui"
+  QA_API_URL: "${QA_ANALYTICS_URL}"
+
+smoke-tests:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.49.0-jammy
+  script:
+    - cd automation && npm ci
+    - npx playwright test tests/UI/migration/e2e-smoke/ --workers=2 --reporter=json
+  artifacts:
+    when: always
+    paths: [automation/playwright-report/, automation/test-results/]
+    expire_in: 7 days
+
+ingest-results:
+  stage: analytics
+  image: node:20-alpine
+  needs: [smoke-tests]
+  when: always
+  script:
+    - node qa-analytics/integrations/results-adapter.js
+  variables:
+    BRANCH: $CI_COMMIT_BRANCH
+    GITHUB_SHA: $CI_COMMIT_SHA
+
+release-gate:
+  stage: gate
+  image: alpine:3.18
+  needs: [ingest-results]
+  before_script:
+    - apk add --no-cache curl jq
+  script:
+    - |
+      RESPONSE=$(curl -s -o /tmp/gate.json -w "%{http_code}" \
+        -X POST "${QA_API_URL}/api/release-gate/check" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer ${QA_TOKEN}" \
+        -d "{\"suiteId\": \"${QA_SUITE}\", \"branch\": \"${CI_COMMIT_BRANCH}\", \"commit\": \"${CI_COMMIT_SHA}\"}")
+      cat /tmp/gate.json | jq .
+      STATUS=$(cat /tmp/gate.json | jq -r '.status')
+      if [ "$STATUS" = "DEPLOY_BLOCKED" ]; then
+        echo "❌ Release gate BLOCKED"
+        cat /tmp/gate.json | jq -r '.blockers[]'
+        exit 1
+      fi
+      echo "✅ Release gate passed"

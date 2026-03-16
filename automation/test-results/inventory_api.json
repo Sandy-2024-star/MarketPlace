@@ -1,0 +1,587 @@
+{
+  "Adobe Commerce to Shopify": {
+    "id": "69a04349106d2189c6b4b6ef",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "magento",
+      "shopify",
+      "adobe"
+    ]
+  },
+  "Amazon Seller Central to Shopify": {
+    "id": "69a04348106d2189c6b4b6ed",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 2,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "amazon",
+      "shopify"
+    ]
+  },
+  "BigCommerce to Shopify": {
+    "id": "697f60ea02ac581022ea527e",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "bigcommerce",
+      "shopify"
+    ]
+  },
+  "Cin7 Omni to Cin7 Core": {
+    "id": "697c701c6919937d9db4edac",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 9,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Clover to Lightspeed Retail (X-Series)": {
+    "id": "698d83b23a196501b05645e7",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "subscription",
+    "price": "Contact for pricing",
+    "tags": [
+      "migration",
+      "pos",
+      "retail"
+    ]
+  },
+  "Clover to Shopify": {
+    "id": "69a04364106d2189c6b4b6f5",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "custom",
+    "price": "Contact for pricing",
+    "tags": [
+      "migration",
+      "pos",
+      "ecommerce",
+      "clover",
+      "shopify"
+    ]
+  },
+  "Etsy to Shopify": {
+    "id": "69a04348106d2189c6b4b6eb",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "etsy",
+      "shopify"
+    ]
+  },
+  "FreshBooks to QuickBooks Online": {
+    "id": "69a041aa106d2189c6b4b58f",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 5,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "accounting",
+      "migration",
+      "freshbooks",
+      "quickbooks",
+      "csv"
+    ]
+  },
+  "GreenLine POS to Lightspeed Retail (X-Series)": {
+    "id": "69281ec53aa2ced755fdb995",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "Migration",
+      "POS",
+      "Retail"
+    ]
+  },
+  "HubSpot Contacts Migration": {
+    "id": "6931a872f983945a2eb05ef4",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 1,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "Hubspot",
+      "crm"
+    ]
+  },
+  "HubSpot to Salesforce": {
+    "id": "69a03ca5106d2189c6b4b0d7",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "crm",
+      "sales",
+      "migration"
+    ]
+  },
+  "Lightspeed R-Series to QuickBooks Online Integration": {
+    "id": "69b7ae214ee4a4c588e6add2",
+    "type": "integration",
+    "migrationType": "N/A",
+    "entityCount": 3,
+    "pricingType": "subscription",
+    "price": "$299/month",
+    "tags": [
+      "Integration",
+      "POS",
+      "Accounting",
+      "Enterprise",
+      "Lightspeed",
+      "QuickBooks"
+    ]
+  },
+  "Lightspeed Retail (R-Series) to Clover": {
+    "id": "6979e9d16919937d9db4c2eb",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "pos",
+      "retail",
+      "migration"
+    ]
+  },
+  "Lightspeed Retail (R-Series) to Lightspeed Retail (X-Series)": {
+    "id": "69318c7ef983945a2eb05ab7",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "rtox"
+    ]
+  },
+  "Lightspeed Retail (R-Series) to Shopify": {
+    "id": "698069d802ac581022ea5b15",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "paid",
+    "price": "$199",
+    "tags": [
+      "migration",
+      "pos",
+      "ecommerce",
+      "lightspeed",
+      "shopify"
+    ]
+  },
+  "Lightspeed Retail (X-Series) to Clover": {
+    "id": "69a04552106d2189c6b4b74e",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "pos",
+      "retail",
+      "migration",
+      "lightspeed",
+      "clover",
+      "vend"
+    ]
+  },
+  "Lightspeed Retail (X-Series) to Shopify": {
+    "id": "698442640a043c0556c350ee",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Microsoft Dynamics 365 to Salesforce": {
+    "id": "69a03ef1106d2189c6b4b477",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "crm",
+      "enterprise",
+      "migration",
+      "dynamics",
+      "salesforce"
+    ]
+  },
+  "PrestaShop to Shopify": {
+    "id": "69a04364106d2189c6b4b6f3",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "prestashop",
+      "shopify",
+      "open-source"
+    ]
+  },
+  "QuickBooks Desktop to Xero": {
+    "id": "699eb48a766a51a016ba5f72",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "accounting",
+      "desktop",
+      "file-based",
+      "quickbooks",
+      "xero"
+    ]
+  },
+  "QuickBooks Online to Xero": {
+    "id": "69a6c2128c78481c4c9b9a0a",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 3,
+    "pricingType": "custom",
+    "price": "Contact for pricing",
+    "tags": [
+      "migration",
+      "accounting",
+      "bookkeeping"
+    ]
+  },
+  "QuickBooks POS to Lightspeed Retail (X-Series)": {
+    "id": "6964b8485d9af1fad3128159",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "Qbpos",
+      "xseries"
+    ]
+  },
+  "RainPOS to Shopify": {
+    "id": "698499480a043c0556c35de9",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 2,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Revel to Clover": {
+    "id": "699eba55766a51a016ba61ea",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 5,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": []
+  },
+  "Sage Cloud to QuickBooks Online": {
+    "id": "699a987988eba38d5b7f6a97",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 6,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Salesforce to HubSpot": {
+    "id": "698acd73ea890ce4c39862c9",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 5,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": []
+  },
+  "Shopify to Clover": {
+    "id": "69a04551106d2189c6b4b748",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "pos",
+      "migration",
+      "shopify",
+      "clover"
+    ]
+  },
+  "Shopify to Clover (v2)": {
+    "id": "69980be288eba38d5b7f4118",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 2,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": []
+  },
+  "Shopify to Lightspeed Retail (X-Series)": {
+    "id": "6931a7e7f983945a2eb05ede",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 6,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "Rseries",
+      "Shopify"
+    ]
+  },
+  "ShopKeep to Shopify": {
+    "id": "69aeac45c1c4da4c3de346eb",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "Contact for pricing",
+    "tags": [
+      "migration",
+      "pos",
+      "retail",
+      "file-based"
+    ]
+  },
+  "Square to Clover": {
+    "id": "6971ee523f8c6265ae804306",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 5,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "square",
+      "clover"
+    ]
+  },
+  "Square to Lightspeed Retail (X-Series)": {
+    "id": "6945216cabb2becbe3f3b884",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 8,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "square",
+      "lightspeed",
+      "retail",
+      "payments"
+    ]
+  },
+  "Square To Quickbooks integration": {
+    "id": "69b28bfdead0ff5396532a4e",
+    "type": "integration",
+    "migrationType": "N/A",
+    "entityCount": 1,
+    "pricingType": "subscription",
+    "price": "$199",
+    "tags": [
+      "Integration"
+    ]
+  },
+  "Square to Shopify": {
+    "id": "6979f2256919937d9db4c416",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "migration",
+      "pos",
+      "ecommerce"
+    ]
+  },
+  "Stripe to Chargebee": {
+    "id": "6984a5ba0a043c0556c35f3a",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 6,
+    "pricingType": "custom",
+    "price": "Contact for pricing",
+    "tags": [
+      "migration",
+      "subscriptions",
+      "billing",
+      "payments"
+    ]
+  },
+  "Toast to Clover": {
+    "id": "69a04551106d2189c6b4b74a",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "pos",
+      "restaurant",
+      "migration",
+      "toast",
+      "clover"
+    ]
+  },
+  "TouchBistro to Clover": {
+    "id": "69a04552106d2189c6b4b74c",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "pos",
+      "restaurant",
+      "migration",
+      "touchbistro",
+      "clover"
+    ]
+  },
+  "Vend to Clover": {
+    "id": "693050abf983945a2eb0515f",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 2,
+    "pricingType": "one-time",
+    "price": "$199",
+    "tags": [
+      "clover",
+      "lightspeed",
+      "vend",
+      "xseries"
+    ]
+  },
+  "Wix eCommerce to Shopify": {
+    "id": "69a04364106d2189c6b4b6f1",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "ecommerce",
+      "migration",
+      "wix",
+      "shopify"
+    ]
+  },
+  "WooCommerce to Shopify": {
+    "id": "697b3d2d6919937d9db4d5ec",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 2,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Xero to QuickBooks Online": {
+    "id": "69984f0d88eba38d5b7f544c",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Xero to QuickBooks Online (Deprecated)": {
+    "id": "69984ef288eba38d5b7f53d4",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": []
+  },
+  "Zoho Books to QuickBooks Online": {
+    "id": "69a041bf106d2189c6b4b591",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 6,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "accounting",
+      "migration",
+      "zoho",
+      "quickbooks",
+      "csv"
+    ]
+  },
+  "Zoho CRM to HubSpot": {
+    "id": "698abc1fea890ce4c398584f",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "one-time",
+    "price": "$99",
+    "tags": []
+  },
+  "Zoho CRM to Salesforce": {
+    "id": "69a03ee5106d2189c6b4b475",
+    "type": "migration",
+    "migrationType": "API",
+    "entityCount": 4,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "crm",
+      "sales",
+      "migration",
+      "zoho",
+      "salesforce"
+    ]
+  },
+  "Zoho CRM to Salesforce (File Import)": {
+    "id": "6999b32588eba38d5b7f69e5",
+    "type": "migration",
+    "migrationType": "File Based",
+    "entityCount": 3,
+    "pricingType": "free",
+    "price": "$0",
+    "tags": [
+      "crm",
+      "file",
+      "salesforce",
+      "zoho"
+    ]
+  }
+}

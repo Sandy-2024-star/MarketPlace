@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "https://marketplace.flow.staging.linktoany.com",
+      "localStorage": [
+        {
+          "name": "persist:auth",
+          "value": "{\"token\":\"\\\"\\\"\",\"isAuthenticated\":\"false\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+        },
+        {
+          "name": "persist:root",
+          "value": "{\"integrations\":\"{\\\"godaddyQbo\\\":{},\\\"godaddyQbd\\\":{},\\\"lightspeedRQbo\\\":{},\\\"lightspeedKQbo\\\":{}}\",\"migrations\":\"{\\\"lightspeed-r-to-x\\\":{\\\"activeStep\\\":1,\\\"completedSteps\\\":[],\\\"stepData\\\":{\\\"1\\\":{},\\\"2\\\":{},\\\"3\\\":{},\\\"4\\\":{}}}}\",\"session\":\"{\\\"activePath\\\":\\\"/\\\"}\",\"auth\":\"{\\\"token\\\":\\\"X-4Owk9dp7aphHE-6ru8TRyXJSjobhjt\\\",\\\"user\\\":{\\\"username\\\":\\\"Automation\\\",\\\"email\\\":\\\"sandesh.pathak+auto@linktoany.com\\\",\\\"type\\\":\\\"normal\\\",\\\"permissions\\\":[\\\"can clone integration\\\",\\\"can export\\\",\\\"can have multiple integration\\\"],\\\"trialEndsAt\\\":\\\"2026-04-09T09:32:39Z\\\",\\\"role\\\":\\\"merchant\\\",\\\"isAdmin\\\":false},\\\"isAuthenticated\\\":true}\",\"app_state\":\"{\\\"integrations\\\":{},\\\"migrations\\\":{}}\",\"flow\":\"{\\\"selectedListingId\\\":null,\\\"selectedListing\\\":null,\\\"sourceSystem\\\":null,\\\"targetSystem\\\":null,\\\"isLoading\\\":false,\\\"error\\\":null,\\\"marketplaceContext\\\":null}\",\"posx\":\"{\\\"id\\\":null,\\\"transformationId\\\":null,\\\"migrationDetails\\\":[],\\\"uploadFileDetails\\\":null,\\\"exceptionDownloadFile\\\":null,\\\"retryMigrationData\\\":null,\\\"storeData\\\":null,\\\"supportedSystemData\\\":null,\\\"migrationConfigFormDeatils\\\":null,\\\"getPublicationDetails\\\":null,\\\"integrationConfigFormDeatils\\\":null,\\\"supportedIntegrationSystems\\\":null,\\\"supportedMigrationData\\\":null,\\\"supportedAPisData\\\":null,\\\"transformationDetails\\\":[],\\\"sourceTransformationDetails\\\":null,\\\"uploadTransformationFileDetails\\\":null,\\\"migrationErroLogsData\\\":null,\\\"syncData\\\":{},\\\"sourceStoreData\\\":null,\\\"targetStoreData\\\":null,\\\"ApiResyncData\\\":null,\\\"mappingEntities\\\":null,\\\"sourceInventoryData\\\":null,\\\"targetInventoryData\\\":null,\\\"loading\\\":{\\\"auth/performSignin\\\":false,\\\"auth/getUser\\\":false}}\",\"_persist\":\"{\\\"version\\\":1,\\\"rehydrated\\\":true}\"}"
+        },
+        {
+          "name": "SP_AUTH_TOKEN",
+          "value": "X-4Owk9dp7aphHE-6ru8TRyXJSjobhjt"
+        }
+      ]
+    }
+  ]
+}

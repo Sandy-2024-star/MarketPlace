@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+defaults:
+  run:
+    working-directory: automation
+
+jobs:
+  # ── Job 1: Unit / UI tests ────────────────────────────────────────────────
+  unit-ui:
+    name: Unit / UI Tests (150+)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run tests
+        run: npm test
+        env:
+          BASE_URL:  ${{ secrets.BASE_URL }}
+          USERNAME:  ${{ secrets.APP_USERNAME }}
+          PASSWORD:  ${{ secrets.APP_PASSWORD }}
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-unit-ui
+          path: automation/playwright-report/
+          retention-days: 7
+
+  # ── Job 2: Smoke — all 44 migrations + integration template ──────────────
+  smoke:
+    name: Smoke — 44 Migrations + Integration
+    runs-on: ubuntu-latest
+    needs: unit-ui
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run smoke suite
+        run: npm run test:smoke
+        env:
+          BASE_URL:  ${{ secrets.BASE_URL }}
+          USERNAME:  ${{ secrets.APP_USERNAME }}
+          PASSWORD:  ${{ secrets.APP_PASSWORD }}
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-smoke
+          path: automation/playwright-report/
+          retention-days: 7
+
+  # ── Job 3: E2E Phase 1 dry-run (merge gate) ───────────────────────────────
+  e2e-p1-dry:
+    name: E2E Phase 1 Dry Run (merge gate)
+    runs-on: ubuntu-latest
+    needs: smoke
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E Phase 1 dry run
+        run: npm run test:e2e-full:p1:dry
+        env:
+          BASE_URL:     ${{ secrets.BASE_URL }}
+          USERNAME:     ${{ secrets.APP_USERNAME }}
+          PASSWORD:     ${{ secrets.APP_PASSWORD }}
+          LSR_DOMAIN:   ${{ secrets.LSR_DOMAIN }}
+          LSR_EMAIL:    ${{ secrets.LSR_EMAIL }}
+          LSR_PASSWORD: ${{ secrets.LSR_PASSWORD }}
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-e2e-p1
+          path: automation/playwright-report-e2e/
+          retention-days: 7

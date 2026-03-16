@@ -1,0 +1,111 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - main [ref=e5]:
+    - generic [ref=e8]:
+      - link "Flow Flow" [ref=e9] [cursor=pointer]:
+        - /url: /listings
+        - img "Flow" [ref=e10]
+        - generic [ref=e11]: Flow
+      - generic [ref=e12]:
+        - button "My Projects" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+          - text: My Projects
+        - button "User" [ref=e17] [cursor=pointer]:
+          - img "User" [ref=e19]
+    - main [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - button "Back" [ref=e28] [cursor=pointer]:
+              - img [ref=e29]
+              - generic [ref=e31]: Back
+            - generic [ref=e33]:
+              - img "Flow" [ref=e35]
+              - generic [ref=e36]: Flow
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - img [ref=e39]
+              - generic [ref=e41]: Select
+            - generic [ref=e43]:
+              - generic [ref=e44]: "2"
+              - generic [ref=e45]: Upload
+            - generic [ref=e47]:
+              - generic [ref=e48]: "3"
+              - generic [ref=e49]: Connect
+            - generic [ref=e51]:
+              - generic [ref=e52]: "4"
+              - generic [ref=e53]: Review
+          - generic [ref=e54]:
+            - button "My Projects" [ref=e55] [cursor=pointer]:
+              - img [ref=e56]
+              - text: My Projects
+            - button "S" [ref=e60] [cursor=pointer]
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e65]: 📁
+            - heading "Upload your files" [level=1] [ref=e66]
+            - paragraph [ref=e67]: Drop your CSV or Excel files below
+          - generic [ref=e70]:
+            - generic [ref=e72]:
+              - img [ref=e74]
+              - generic [ref=e76]:
+                - generic [ref=e78]: Customers
+                - generic [ref=e79]: ✓ Ready to migrate
+              - generic [ref=e80]:
+                - img [ref=e81]
+                - generic [ref=e84]: Ready
+            - generic [ref=e85]:
+              - generic [ref=e89]:
+                - generic [ref=e90]: ✨
+                - generic [ref=e91]:
+                  - paragraph [ref=e92]: Data processed successfully!
+                  - paragraph [ref=e93]: Your files are ready for migration
+              - generic [ref=e94]:
+                - generic [ref=e95]:
+                  - heading "Data Preview" [level=4] [ref=e96]
+                  - generic [ref=e97]: Showing sample records
+                - button "👥 Customers 0/1" [ref=e99] [cursor=pointer]:
+                  - generic [ref=e100]: 👥
+                  - generic [ref=e101]: Customers
+                  - generic [ref=e102]: 0/1
+                - generic [ref=e103]:
+                  - generic [ref=e105]:
+                    - img [ref=e106]
+                    - generic [ref=e108]: Data Preview
+                    - generic [ref=e109]: (1 records)
+                  - table [ref=e111]:
+                    - rowgroup [ref=e112]:
+                      - row "# Status Flow Entity Type Last_name Addresses Errors Actions" [ref=e113]:
+                        - columnheader "#" [ref=e114]
+                        - columnheader "Status" [ref=e115]
+                        - columnheader "Flow Entity Type" [ref=e116]
+                        - columnheader "Last_name" [ref=e117]
+                        - columnheader "Addresses" [ref=e118]
+                        - columnheader "Errors" [ref=e119]
+                        - columnheader "Actions" [ref=e120]
+                    - rowgroup [ref=e121]:
+                      - 'row "1 Error customer Unknown [{}]... flowId: Required" [ref=e122]':
+                        - cell "1" [ref=e123]
+                        - cell "Error" [ref=e124]:
+                          - generic [ref=e125]: Error
+                        - cell "customer" [ref=e127]
+                        - cell "Unknown" [ref=e128]
+                        - 'cell "[{}]..." [ref=e129]'
+                        - 'cell "flowId: Required" [ref=e130]':
+                          - generic [ref=e132]: "flowId: Required"
+                        - cell [ref=e133]:
+                          - button "View all columns" [ref=e134] [cursor=pointer]:
+                            - img [ref=e135]
+        - generic [ref=e141]:
+          - button "Back" [ref=e143] [cursor=pointer]:
+            - img [ref=e144]
+            - text: Back
+          - button "Continue" [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]: Continue
+            - img [ref=e148]
+  - region "Notifications alt+T"
+  - region "Notifications (F8)":
+    - list
+```

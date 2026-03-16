@@ -1,0 +1,9 @@
+{
+  "slowThresholdMs": 40000,
+  "blockThresholdPct": 1,
+  "reviewThresholdPct": 95,
+  "historyLimit": 200,
+  "perTestThresholds": {
+    "INVENTORY – list migration templates and type": 360000
+  }
+}

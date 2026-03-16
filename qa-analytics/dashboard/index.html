@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Analytics Platform</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:none } }
+    .panel, .metric-card, .chart-card, .gate-card { animation: fadeIn .3s ease; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<header class="header">
+  <div class="header-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+    </svg>
+    QA <span>Analytics</span>
+  </div>
+  <div class="header-meta">
+    <select id="suite-select" class="suite-select"></select>
+    <span>Updated: <span id="last-updated">—</span></span>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle theme">🌙</button>
+    <span class="live-badge">
+      <span class="live-dot" id="live-dot"></span>
+      <span id="live-text">Connecting</span>
+    </span>
+  </div>
+</header>
+<script>
+  // Apply saved theme before first paint to avoid flash
+  (function () {
+    const saved = localStorage.getItem('qa-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+
+<!-- ── Main ────────────────────────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- Top metrics -->
+  <section class="section">
+    <div class="section-title">Latest Run</div>
+    <div class="metrics-grid">
+      <div class="metric-card blue">
+        <div class="metric-label">Total Tests</div>
+        <div class="metric-value" id="m-total">—</div>
+      </div>
+      <div class="metric-card green" id="m-pass-card">
+        <div class="metric-label">Pass Rate</div>
+        <div class="metric-value" id="m-pass">—</div>
+      </div>
+      <div class="metric-card red" id="m-failed-card">
+        <div class="metric-label">Failed</div>
+        <div class="metric-value" id="m-failed">—</div>
+      </div>
+      <div class="metric-card yellow" id="m-flaky-card">
+        <div class="metric-label">Flaky Rate</div>
+        <div class="metric-value" id="m-flaky">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="section">
+    <div class="section-title">Trends</div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-title">Pass Rate — Last 20 Runs</div>
+        <div class="chart-canvas"><canvas id="chart-pass-rate" style="width:100%;height:120px"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Run Duration (minutes)</div>
+        <div class="chart-canvas"><canvas id="chart-duration" style="width:100%;height:120px"></canvas></div>
+      </div>
+      <div class="chart-card" style="display:flex;align-items:center;gap:20px">
+        <canvas id="chart-donut" style="width:120px;height:120px;flex-shrink:0"></canvas>
+        <div style="font-size:12px;line-height:2">
+          <div><span style="color:var(--green)">●</span> Passed</div>
+          <div><span style="color:var(--red)">●</span> Failed</div>
+          <div><span style="color:var(--yellow)">●</span> Flaky</div>
+          <div><span style="color:#475569">●</span> Skipped</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Release gate -->
+  <section class="section">
+    <div class="section-title">Release Gate</div>
+    <div class="gate-card" id="gate-card">
+      <div class="gate-status" id="gate-status">
+        <span style="color:var(--text-muted)">⚪ Loading...</span>
+      </div>
+      <div class="gate-checks" id="gate-checks"></div>
+    </div>
+  </section>
+
+  <!-- Two column: clusters + flaky -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px">
+
+    <!-- Failure clusters -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3>🔴 Failure Clusters</h3>
+        <span class="panel-badge" id="clusters-badge">—</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Root Cause</th>
+            <th>Sample Error</th>
+            <th>Hits</th>
+            <th>Tests</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="clusters-tbody">
+          <tr><td colspan="5" class="empty"><h4>Loading...</h4></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Flaky tests -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3>⚠️ Flaky Tests</h3>
+        <span class="panel-badge" id="flaky-badge">—</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Flaky Rate</th>
+            <th>History</th>
+            <th>Owner</th>
+            <th>File</th>
+            <th title="Mark as critical — failures block the release gate">★</th>
+          </tr>
+        </thead>
+        <tbody id="flaky-tbody">
+          <tr><td colspan="6" class="empty"><h4>Loading...</h4></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Run comparison -->
+  <section class="section">
+    <div class="section-title">Run Comparison — Latest vs Previous</div>
+    <div class="panel">
+      <div id="compare-content">
+        <div class="empty"><h4>Loading...</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Run history -->
+  <section class="section">
+    <div class="section-title">Run History</div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:16px">
+      <div class="panel">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Run</th><th>Status</th><th>Pass Rate</th><th>Failed</th><th>Branch</th><th>Duration</th>
+            </tr>
+          </thead>
+          <tbody id="history-tbody">
+            <tr><td colspan="6" class="empty"><h4>Loading...</h4></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Pass Rate per Run</div>
+        <canvas id="chart-runs" style="width:100%;height:200px"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Owner assignment modal ──────────────────────────────────────────────── -->
+<div id="owner-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;width:340px;box-shadow:var(--shadow)">
+    <div style="font-size:14px;font-weight:700;margin-bottom:16px">Assign Test Owner</div>
+    <div id="owner-test-name" style="font-size:12px;color:var(--text-muted);margin-bottom:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>
+    <label style="display:block;font-size:12px;color:var(--text-dim);margin-bottom:4px">Team</label>
+    <input id="owner-team" type="text" placeholder="e.g. QA, Frontend, Platform"
+      style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:var(--radius);padding:7px 10px;font-size:13px;margin-bottom:12px;box-sizing:border-box">
+    <label style="display:block;font-size:12px;color:var(--text-dim);margin-bottom:4px">Email</label>
+    <input id="owner-email" type="email" placeholder="e.g. dev@example.com"
+      style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:var(--radius);padding:7px 10px;font-size:13px;margin-bottom:20px;box-sizing:border-box">
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button onclick="closeOwnerModal()" style="background:var(--bg-hover);border:1px solid var(--border);color:var(--text-dim);border-radius:var(--radius);padding:6px 16px;cursor:pointer;font-size:13px">Cancel</button>
+      <button onclick="saveOwner()" style="background:var(--accent);border:none;color:#fff;border-radius:var(--radius);padding:6px 16px;cursor:pointer;font-size:13px;font-weight:600">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/charts.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

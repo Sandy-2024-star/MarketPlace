@@ -1,0 +1,2 @@
+this is a plain text file — not a CSV
+used for file upload validation tests

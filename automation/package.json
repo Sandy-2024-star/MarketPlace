@@ -1,0 +1,39 @@
+{
+  "name": "flow-marketplace-automation",
+  "version": "1.0.0",
+  "description": "Playwright UI and API automation framework for Flow Marketplace web application (JavaScript, POM architecture).",
+  "main": "index.js",
+  "scripts": {
+    "test":                "npx playwright test; node utils/dashboard.js",
+    "test:headed":         "npx playwright test --headed; node utils/dashboard.js",
+    "test:api":            "npx playwright test tests/api; node utils/dashboard.js",
+    "test:auth":           "npx playwright test tests/UI/auth; node utils/dashboard.js",
+    "test:marketplace":    "npx playwright test tests/UI/marketplace; node utils/dashboard.js",
+    "test:migration":      "npx playwright test tests/UI/migration; node utils/dashboard.js",
+    "test:validate":       "npx playwright test tests/UI/migration/validate.spec.js; node utils/dashboard.js",
+    "test:shopify":        "npx playwright test tests/UI/shopify tests/UI/auth/shopify.setup.spec.js; node utils/dashboard.js",
+    "test:probes":         "npx playwright test tests/UI/probes; node utils/dashboard.js",
+    "test:smoke":          "npx playwright test tests/UI/migration/e2e-smoke/ --workers=2; node utils/dashboard.js",
+    "test:e2e-full":       "npx playwright test --config tests/UI/migration/e2e-full/playwright.config.js; node utils/dashboard.js",
+    "test:e2e-full:dry":   "DRY_RUN=1 npx playwright test --config tests/UI/migration/e2e-full/playwright.config.js; node utils/dashboard.js",
+    "test:e2e-full:p1":    "npx playwright test --config tests/UI/migration/e2e-full/playwright.config.js --grep \"phase:1\"; node utils/dashboard.js",
+    "test:e2e-full:p1:dry":"DRY_RUN=1 npx playwright test --config tests/UI/migration/e2e-full/playwright.config.js --grep \"phase:1\"; node utils/dashboard.js",
+    "test:e2e-single":     "npx playwright test tests/UI/migration/e2e_migration.spec.js --timeout=300000 --workers=1 --retries=0; node utils/dashboard.js",
+    "test:e2e-single:full":"npx playwright test tests/UI/migration/e2e_migration_full.spec.js --timeout=600000 --workers=1 --retries=0; node utils/dashboard.js",
+    "probe:registry":      "npx playwright test tests/UI/migration/e2e-smoke/probe.spec.js --workers=1",
+    "dashboard":           "node utils/dashboard.js",
+    "show-report":         "npx playwright show-report",
+    "show-report:e2e":     "npx playwright show-report playwright-report-e2e"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "marked": "^17.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

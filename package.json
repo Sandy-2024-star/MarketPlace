@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "test":             "cd automation && npx playwright test; node utils/dashboard.js",
+    "test:api":         "cd automation && npx playwright test tests/api; node utils/dashboard.js",
+    "test:auth":        "cd automation && npx playwright test tests/UI/auth; node utils/dashboard.js",
+    "test:marketplace": "cd automation && npx playwright test tests/UI/marketplace; node utils/dashboard.js",
+    "test:migration":   "cd automation && npx playwright test tests/UI/migration; node utils/dashboard.js",
+    "test:shopify":     "cd automation && npx playwright test tests/UI/shopify tests/UI/auth/shopify.setup.spec.js; node utils/dashboard.js",
+    "test:probes":      "cd automation && npx playwright test tests/UI/probes; node utils/dashboard.js",
+    "test:e2e":         "cd automation && npx playwright test tests/UI/migration/e2e_migration.spec.js tests/UI/migration/e2e_migration_full.spec.js; node utils/dashboard.js",
+    "dashboard":        "cd automation && node utils/dashboard.js"
+  }
+}
