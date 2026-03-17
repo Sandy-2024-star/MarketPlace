@@ -1,6 +1,6 @@
 # Test Coverage Reference
 
-> Last updated: 2026-03-16
+> Last updated: 2026-03-17
 > Active tests: 190+ across 27 spec files (main config) + 45 smoke + 44 e2e-full
 > Runner: Playwright · Browser: Chromium
 
@@ -12,9 +12,9 @@
 |-------|--------|------|-------|-------|-------------|
 | **Unit / UI** | `npm test` | all specs under `tests/` | 190+ | None | Every PR |
 | **Smoke** | `npm run test:smoke` | `e2e-smoke/` (3 spec files) | 45 | None | Every PR / deploy |
-| **Validate** | `npm run test:validate` | `migration/validate.spec.js` | 9 | `.env` login | Pre-release / env check |
-| **E2E Full — dry** | `npm run test:e2e-full:p1:dry` | `e2e-full/e2e_all_migrations.spec.js` | 3 (phase 1) | LSR creds | Merge gate |
-| **E2E Full — live** | `npm run test:e2e-full` | `e2e-full/e2e_all_migrations.spec.js` | 44 | Per phase | Pre-release / nightly |
+| **Validate** | `npm run test:validate` | `migration/validate.spec.ts` | 9 | `.env` login | Pre-release / env check |
+| **E2E Full — dry** | `npm run test:e2e-full:p1:dry` | `e2e-full/e2e_all_migrations.spec.ts` | 3 (phase 1) | LSR creds | Merge gate |
+| **E2E Full — live** | `npm run test:e2e-full` | `e2e-full/e2e_all_migrations.spec.ts` | 44 | Per phase | Pre-release / nightly |
 
 ---
 
@@ -22,12 +22,12 @@
 
 | File | Reason | How to run |
 |------|--------|------------|
-| `UI/auth/shopify.setup.spec.js` | Requires Shopify OAuth credentials | N/A |
+| `UI/auth/shopify.setup.spec.ts` | Requires Shopify OAuth credentials | N/A |
 | `UI/shopify/**` | Shopify SSO tests — requires external creds | `npm run test:shopify` |
-| `UI/migration/e2e_migration.spec.js` | Ad-hoc single migration (Shopify→LSR, Customers, linkprod01) — runs a real migration | `npm run test:e2e-single` |
-| `UI/migration/e2e_migration_full.spec.js` | Ad-hoc single migration (Shopify→LSR, 3 types, linkprod03) — 10 min, needs clean account | `npm run test:e2e-single:full` |
+| `UI/migration/e2e_migration.spec.ts` | Ad-hoc single migration (Shopify→LSR, Customers, linkprod01) — runs a real migration | `npm run test:e2e-single` |
+| `UI/migration/e2e_migration_full.spec.ts` | Ad-hoc single migration (Shopify→LSR, 3 types, linkprod03) — 10 min, needs clean account | `npm run test:e2e-single:full` |
 | `UI/migration/e2e-full/**` | Deep E2E — full wizard to Start Migration — runs via its own config | `npm run test:e2e-full` |
-| `UI/migration/e2e-smoke/probe.spec.js` | Registry refresh tool — hits live API to rebuild `migrations-registry.js` | `npm run probe:registry` |
+| `UI/migration/e2e-smoke/probe.spec.ts` | Registry refresh tool — hits live API to rebuild `migrations-registry.ts` | `npm run probe:registry` |
 
 ---
 
@@ -87,7 +87,7 @@ npm run test:e2e-full          # All phases, live
 
 ---
 
-## Validate (`validate.spec.js`)
+## Validate (`validate.spec.ts`)
 
 App discovery walkthrough — 9 serial steps. Useful as a pre-flight check against a new environment or after a deploy.
 
@@ -109,13 +109,13 @@ npm run test:validate
 
 ## API Specs
 
-### `api/auth.spec.js`
+### `api/auth.spec.ts`
 - Login returns a valid session token
 - Invalid credentials rejected with 422
 
 ---
 
-### `api/marketplace.spec.js`
+### `api/marketplace.spec.ts`
 - Fetch listings with pagination
 - Fetch a listing by ID
 - Fetch all systems
@@ -123,7 +123,7 @@ npm run test:validate
 
 ---
 
-### `api/listing.spec.js`
+### `api/listing.spec.ts`
 - Paginated listing list
 - Filter by `type=migration` and `type=integration`
 - Required fields on each list item
@@ -137,7 +137,7 @@ npm run test:validate
 
 ---
 
-### `api/list_templates.spec.js`
+### `api/list_templates.spec.ts`
 - All templates fetched in a single request
 - Only `migration` and `integration` types exist
 - At least one File Based and one API migration present
@@ -150,7 +150,7 @@ npm run test:validate
 
 ## UI — Auth Specs
 
-### `UI/auth/login.spec.js`
+### `UI/auth/login.spec.ts`
 - Login form fields (username, password, Confirm button) visible
 - Successful login redirects to marketplace
 - Invalid credentials shows error
@@ -159,7 +159,7 @@ npm run test:validate
 
 ---
 
-### `UI/auth/signup.spec.js`
+### `UI/auth/signup.spec.ts`
 - All sign-up form fields and Verify email button visible
 - Navigate to sign-up via "Sign Up here" link on login
 - Login back-link on sign-up page
@@ -168,7 +168,7 @@ npm run test:validate
 
 ---
 
-### `UI/auth/forgotpassword.spec.js`
+### `UI/auth/forgotpassword.spec.ts`
 - Email input and Submit button visible
 - "Forgot password?" link on login page has correct `href`
 - Empty submit stays on forgot-password or shows error
@@ -176,7 +176,7 @@ npm run test:validate
 
 ---
 
-### `UI/auth/signout.spec.js`
+### `UI/auth/sign-out.spec.ts`
 - User menu button shows logged-in email
 - User menu opens and shows Sign out option
 - Sign out redirects away from `/listings`
@@ -184,7 +184,7 @@ npm run test:validate
 
 ---
 
-### `UI/auth/onboarding.spec.js`
+### `UI/auth/onboarding.spec.ts`
 - Page loads without errors
 - At least one heading visible
 - At least one interactive element (button or link)
@@ -195,7 +195,7 @@ npm run test:validate
 
 ## UI — Marketplace Specs
 
-### `UI/marketplace/marketplace.spec.js`
+### `UI/marketplace/marketplace.spec.ts`
 - "Marketplace" heading visible
 - Template count text visible
 - Cards displayed (h3 elements)
@@ -210,7 +210,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/filters.spec.js`
+### `UI/marketplace/filters.spec.ts`
 - All three tab filters visible
 - "All" tab shows cards
 - "Migrations" tab filters cards
@@ -224,7 +224,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/pagination.spec.js`
+### `UI/marketplace/pagination.spec.ts`
 - Default 10 cards on page 1
 - Previous button disabled on page 1
 - Next button enabled on page 1
@@ -238,7 +238,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/search-behavior.spec.js`
+### `UI/marketplace/search-behavior.spec.ts`
 - Clear search restores full card list
 - Consecutive searches update results independently
 - Special characters don't crash the page
@@ -249,7 +249,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/card-detail.spec.js`
+### `UI/marketplace/card-detail.spec.ts`
 - Detail page sections visible (What It Does, How It Works, Security & Trust, Important Notes)
 - Section headings contain non-empty text
 - Watch Demo Video button visible
@@ -261,7 +261,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/card-badges.spec.js`
+### `UI/marketplace/card-badges.spec.ts`
 - First card detail shows File Based or API badge
 - Second card also shows a valid badge
 - Category tags (POS, Migration, Integration etc.) visible on detail
@@ -270,7 +270,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/navigation-flows.spec.js`
+### `UI/marketplace/navigation-flows.spec.ts`
 - Browser back from detail returns to marketplace
 - Browser forward after back re-opens detail
 - Deep link to `/listings` loads marketplace
@@ -282,7 +282,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/landing-page.spec.js`
+### `UI/marketplace/landing-page.spec.ts`
 - Hero heading visible
 - Sign In button visible in nav
 - Get Started button visible in nav
@@ -294,7 +294,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/url-persistence.spec.js`
+### `UI/marketplace/url-persistence.spec.ts`
 - My Projects tab adds `?tab=projects` to URL
 - Detail page URL contains listing ID
 - Detail page URL is shareable — direct nav loads same card
@@ -305,7 +305,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/file-assist.spec.js`
+### `UI/marketplace/file-assist.spec.ts`
 - File Assist nav button visible in sidebar
 - Clicking File Assist loads section with a heading
 - URL stays at `/listings` after navigating to File Assist
@@ -316,7 +316,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/my-projects.spec.js`
+### `UI/marketplace/my-projects.spec.ts`
 - My Projects heading visible after navigating
 - URL includes `?tab=projects`
 - Tab shows projects or empty state message
@@ -326,7 +326,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/user-profile.spec.js`
+### `UI/marketplace/user-profile.spec.ts`
 - User menu button visible with logged-in email
 - Button email matches configured username
 - Opening menu reveals options (logs menu items)
@@ -336,7 +336,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/responsive.spec.js`
+### `UI/marketplace/responsive.spec.ts`
 - Mobile (375px) — marketplace heading visible
 - Mobile (375px) — migration cards visible
 - Mobile (375px) — sidebar or hamburger nav present
@@ -349,18 +349,18 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/sign-out.spec.js`
+### `UI/marketplace/sign-out.spec.ts`
 - User menu button visible and shows email
 - Clicking user menu opens Sign out option
 - User menu closes on Escape key
 - Sign out redirects away from `/listings`
 - After sign out, `/listings` redirects to login
 
-> Note: `UI/auth/signout.spec.js` also covers sign-out from the auth fixture perspective (4 tests). This file adds the Escape-key dismiss test and uses the POM `signOut()` helper.
+> Note: `UI/auth/sign-out.spec.ts` also covers sign-out from the auth fixture perspective (4 tests). This file adds the Escape-key dismiss test and uses the POM `signOut()` helper.
 
 ---
 
-### `UI/auth/auth-pages.spec.js`
+### `UI/auth/auth-pages.spec.ts`
 - Login page shows username/password inputs
 - Login page shows submit button
 - Login page has Forgot password link
@@ -373,7 +373,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/wizard-step1.spec.js`
+### `UI/marketplace/wizard-step1.spec.ts`
 - Wizard loads with "Choose your data" heading
 - URL contains `/migration-flow` after Get Started
 - Continue button disabled when no data type selected
@@ -384,7 +384,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/explore.spec.js`
+### `UI/marketplace/explore.spec.ts`
 - EXPLORE 1 — Get Started wizard launches
 - EXPLORE 2 — File Assist page loads
 - EXPLORE 3 — Marketplace pagination works
@@ -398,7 +398,7 @@ npm run test:validate
 
 ---
 
-### `UI/marketplace/list_templates.spec.js`
+### `UI/marketplace/list_templates.spec.ts`
 - Full UI crawl of all 47 cards (visits every detail page)
 - Captures File Based / API badge for each card
 - Saves inventory snapshot to `test-results/inventory.json`
@@ -407,7 +407,7 @@ npm run test:validate
 
 ## UI — Migration Specs
 
-### `UI/migration/error-states.spec.js`
+### `UI/migration/error-states.spec.ts`
 - Unauthenticated direct access to `/migration-flow` redirects to login
 - Unauthenticated direct access to `/listing/{id}` redirects to login
 - Cleared session accessing `/listings` redirects to login
@@ -417,14 +417,14 @@ npm run test:validate
 
 ---
 
-### `UI/migration/e2e-smoke/integration-smoke.spec.js`
+### `UI/migration/e2e-smoke/integration-smoke.spec.ts`
 - Square To Quickbooks integration — detail page loads with "Set up Integration" CTA
 - Clicking CTA launches integration flow (URL navigates away from detail)
 - Integration wizard shows at least one heading or button
 
 ---
 
-### `UI/migration/migration.spec.js`
+### `UI/migration/migration.spec.ts`
 - My Projects heading visible
 - Active project count displays a number
 - Search input works
@@ -433,7 +433,7 @@ npm run test:validate
 
 ---
 
-### `UI/migration/wizard.spec.js`
+### `UI/migration/wizard.spec.ts`
 - File Based badge on Adobe Commerce to Shopify
 - API badge on BigCommerce to Shopify
 - Watch Demo Video button on card detail
@@ -453,17 +453,41 @@ npm run test:validate
 
 ---
 
+### `UI/migration/wizard-step3.spec.ts`
+- Step 3 heading visible after advancing from Step 2 (file-based)
+- Destination connect section rendered
+- Connect Account button present
+- Continue disabled until destination connected
+
+---
+
+### `UI/migration/api-connector-errors.spec.ts`
+- Step 2 API connector error states visible on invalid credentials
+- Error message displayed without page crash
+- Retry / re-enter flow accessible after error
+
+---
+
+### `UI/migration/file-upload-validation.spec.ts`
+- File upload rejects invalid file types
+- Upload area visible and accepts valid CSV
+- Confirm button disabled until valid file processed
+- Error feedback shown for oversized or malformed files
+
+---
+
 ## Coverage Gaps / TODO
 
 > Update this section when new features are added or gaps are identified.
 
-- [x] Wizard Step 2 — file upload and API connect covered by `wizard.spec.js` + `e2e-smoke`
+- [x] Wizard Step 2 — file upload and API connect covered by `wizard.spec.ts` + `e2e-smoke`
 - [x] Wizard Steps 3–5 — covered by `e2e-full` Phase 1 (connect → settings → review → launch)
 - [ ] E2E Full Phase 2–4 — implemented, not yet live-tested (needs Shopify / QBO / Xero etc. creds)
-- [x] Integration template wizard flow — smoke covered by `e2e-smoke/integration-smoke.spec.js`
-- [x] Error states (auth guard, cleared session, unauthenticated routes) — covered by `migration/error-states.spec.js`
-- [x] CI pipeline wired — `.github/workflows/ci.yml` (unit-ui → smoke → e2e-p1-dry)
-- [x] File Assist page functionality — dedicated spec `UI/marketplace/file-assist.spec.js` (7 tests)
-- [x] User profile / account menu — `UI/marketplace/user-profile.spec.js` (6 tests — probe-style, passes with or without a dedicated settings page)
-- [x] Pricing display on detail page — asserted in `card-detail.spec.js`
-- [x] Mobile / responsive layout — `UI/marketplace/responsive.spec.js` (9 tests — 375px + 768px)
+- [x] Integration template wizard flow — smoke covered by `e2e-smoke/integration-smoke.spec.ts`
+- [x] Error states (auth guard, cleared session, unauthenticated routes) — covered by `migration/error-states.spec.ts`
+- [x] CI pipeline wired — `.github/workflows/ci.yml` (typecheck → unit-ui → smoke → e2e-p1-dry)
+- [x] TypeScript migration complete — all spec/helper/util/fixture/POM files converted to `.ts`; `tsc --noEmit` passes clean
+- [x] File Assist page functionality — dedicated spec `UI/marketplace/file-assist.spec.ts` (7 tests)
+- [x] User profile / account menu — `UI/marketplace/user-profile.spec.ts` (6 tests — probe-style, passes with or without a dedicated settings page)
+- [x] Pricing display on detail page — asserted in `card-detail.spec.ts`
+- [x] Mobile / responsive layout — `UI/marketplace/responsive.spec.ts` (9 tests — 375px + 768px)
