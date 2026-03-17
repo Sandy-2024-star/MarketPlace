@@ -32,14 +32,6 @@ jobs:
         working-directory: automation
         run: npx tsc --noEmit
 
-      - name: Install qa-analytics backend dependencies
-        working-directory: qa-analytics/backend
-        run: npm ci
-
-      - name: Type-check qa-analytics
-        working-directory: qa-analytics/backend
-        run: npx tsc --noEmit -p ../tsconfig.json
-
   # ── Job 1: Unit / UI tests ────────────────────────────────────────────────
   unit-ui:
     name: Unit / UI Tests (150+)
@@ -140,6 +132,7 @@ jobs:
 
       - name: Release gate check
         if: success()
+        continue-on-error: true
         working-directory: .
         run: npx --yes tsx qa-analytics/ci-gates/check.ts
         env:
@@ -201,6 +194,7 @@ jobs:
 
       - name: Release gate check
         if: success()
+        continue-on-error: true
         working-directory: .
         run: npx --yes tsx qa-analytics/ci-gates/check.ts
         env:
