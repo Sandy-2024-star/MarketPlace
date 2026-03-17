@@ -32,9 +32,15 @@ test-results/
 # IDE / tool config (local only)
 .claude/
 
+# TypeScript build output
+dist/
+
 # Logs
 *.log
 npm-debug.log*
 
 # Coverage
 coverage/
+
+# QA Analytics — isolated module (tracked in its own repo)
+qa-analytics/
